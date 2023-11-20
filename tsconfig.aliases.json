@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@slices/*": ["./src/redux/slices/*"],
+      "hooks$": ["./src/redux/hooks.ts"]
+    }
+  }
+}
