@@ -1,6 +1,5 @@
 import React from 'react'
 import { Component as Layout } from './components/layout/layout'
-import { Component as Home } from './components/home'
 import './App.scss'
 import { createHashRouter, RouterProvider } from 'react-router-dom'
 import type { RouteObject } from 'react-router-dom'
@@ -12,8 +11,25 @@ interface NavLabel {
 export type ContainerRouter = RouteObject & NavLabel
 
 export const containerRouter: ContainerRouter[] = [
-  { index: true, element: <Home /> },
-  { path: 'home', label: 'Home', element: <Home /> },
+  {
+    index: true,
+    lazy: async () => await import('./components/exam')
+  },
+  {
+    path: 'exam',
+    label: '測驗',
+    lazy: async () => await import('./components/exam')
+  },
+  {
+    path: 'area',
+    label: '領域',
+    lazy: async () => await import('./components/area')
+  },
+  {
+    path: 'content',
+    label: '內容',
+    lazy: async () => await import('./components/content')
+  },
   {
     path: 'reducerDispatch',
     label: 'Reducer',
