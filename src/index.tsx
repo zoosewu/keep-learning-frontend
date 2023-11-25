@@ -5,6 +5,7 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { Provider } from 'react-redux'
 import { setupStore } from './redux/store'
+import { type StartOptions } from 'msw/lib/browser'
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 )
@@ -21,10 +22,11 @@ root.render(
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals()
 
-if (process.env.NODE_ENV === 'development') {
-  const { worker } = await import('./mocks/browser')
-  worker.start({
-    quiet: true,
-    onUnhandledRequest: 'bypass'
-  })
+const i = async (): Promise<void> => {
+  if (process.env.NODE_ENV === 'development') {
+    const { worker } = await import('./mock/browser')
+    const option: StartOptions = { quiet: true, onUnhandledRequest: 'bypass' }
+    await worker.start(option)
+  }
 }
+i().catch(() => { })
