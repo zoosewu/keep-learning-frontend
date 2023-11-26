@@ -1,6 +1,6 @@
 {
-  "name": "react-spa-template",
-  "displayName": "React SPA Template",
+  "name": "keep-learning-frontend",
+  "displayName": "Keep Learning",
   "version": "0.1.0",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.6",

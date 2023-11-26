@@ -13,22 +13,22 @@ export type ContainerRouter = RouteObject & NavLabel
 export const containerRouter: ContainerRouter[] = [
   {
     index: true,
-    lazy: async () => await import('./components/exam')
+    lazy: async () => await import('./components/exercise')
   },
   {
-    path: 'exam',
+    path: 'exercise',
     label: '測驗',
-    lazy: async () => await import('./components/exam')
+    lazy: async () => await import('./components/exercise')
   },
   {
-    path: 'area',
+    path: 'category',
     label: '領域',
-    lazy: async () => await import('./components/area')
+    lazy: async () => await import('./components/category')
   },
   {
-    path: 'content',
+    path: 'subject',
     label: '內容',
-    lazy: async () => await import('./components/content')
+    lazy: async () => await import('./components/subject')
   },
   {
     path: 'reducerDispatch',
