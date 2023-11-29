@@ -3,9 +3,9 @@ pipeline {
   stages {
     stage('test') {
       steps {
-        nodejs('test') {
+        nodejs(nodeJSInstallationName: 'test', configId: '0') {
           sh '''npm test
-npm lint'''
+npm run lint'''
         }
 
       }
