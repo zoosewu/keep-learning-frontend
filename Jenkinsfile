@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('test') {
       steps {
-        nodejs(nodeJSInstallationName: 'nodejs16.20.2', configId: '0') {
+        nodejs('nodejs16.20.2') {
           sh '''npm ci
 npm test
 npm run lint'''
