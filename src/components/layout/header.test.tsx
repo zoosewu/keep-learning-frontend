@@ -9,6 +9,6 @@ test('renders header', () => {
       <Header />
     </MemoryRouter>
   )
-  const linkElement = screen.getByText(/React SPA Template/i)
+  const linkElement = screen.getByText(/Keep Learning/i)
   expect(linkElement).toBeInTheDocument()
 })
