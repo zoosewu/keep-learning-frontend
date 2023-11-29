@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('test') {
       steps {
-        nodejs(nodeJSInstallationName: 'test', configId: '0') {
+        nodejs(nodeJSInstallationName: 'nodejs', configId: '0') {
           sh '''npm ci
 npm test
 npm run lint'''
@@ -14,7 +14,7 @@ npm run lint'''
 
     stage('build') {
       steps {
-        nodejs('build') {
+        nodejs('nodejs') {
           sh 'npm build'
         }
 
