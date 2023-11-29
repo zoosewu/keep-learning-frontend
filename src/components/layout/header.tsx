@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import { Navbar, Nav } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import pkg from '@/../package.json'
-import { containerRouter } from '@/App'
+import { containerRouter } from '@/containerRouter'
 export const Component: React.FC = () => {
   return (
     <Navbar bg='light' expand='lg'>
