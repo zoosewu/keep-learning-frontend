@@ -3,14 +3,20 @@ pipeline {
   stages {
     stage('test') {
       steps {
-        sh '''npm test
+        nodejs('test') {
+          sh '''npm test
 npm lint'''
+        }
+
       }
     }
 
     stage('build') {
       steps {
-        sh 'npm build'
+        nodejs('build') {
+          sh 'npm build'
+        }
+
       }
     }
 
