@@ -15,7 +15,7 @@ npm run lint'''
     stage('build') {
       steps {
         nodejs('nodejs16.20.2') {
-          sh 'npm build'
+          sh 'npm run build'
         }
 
       }
